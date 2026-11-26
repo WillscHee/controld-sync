@@ -30,7 +30,37 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  update-awavenue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Download latest AWAvenue list
+        run: |
+          curl -sL "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Adguard-No.Unwelcome.txt" -o /tmp/awavenue-raw.txt
+          echo "Downloaded $(wc -l < /tmp/awavenue-raw.txt) lines"
+
+      - name: Convert to ControlD JSON format
+        run: |
+          python3 convert-awavenue.py /tmp/awavenue-raw.txt /tmp/awavenue-converted.json
+
+      - name: Commit updated list if changed
+        run: |
+          if ! cmp -s /tmp/awavenue-converted.json lists/awavenue-no-unwelcome.json; then
+            cp /tmp/awavenue-converted.json lists/awavenue-no-unwelcome.json
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add lists/awavenue-no-unwelcome.json
+            git commit -m "chore: update AWAvenue No.Unwelcome list"
+            git push
+            echo "AWAvenue list updated"
+          else
+            echo "AWAvenue list unchanged"
+          fi
+
   check:
+    needs: update-awavenue
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
