@@ -42,7 +42,7 @@ names = ["Charles", "Sarah", "Tony", "Will"]
 "Native Tracker TikTok"     = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/native-tracker-tiktok-folder.json"
 "Referral Allow"            = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/referral-allow-folder.json"
 "AWAvenue No.Unwelcome"     = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/awavenue-no-unwelcome.json"
-"DoH Whitelist"             = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/doh-whitelist.json"
+"DoH Blocklist"             = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/doh-whitelist.json"
 
 # =============================================================================
 # PROFILE → FOLDER MAPPINGS
@@ -60,7 +60,7 @@ Charles = [
   "Native Tracker TikTok",
   "Referral Allow",
   "AWAvenue No.Unwelcome",
-  "DoH Whitelist"
+  "DoH Blocklist"
 ]
 Sarah = [
   "Apple Private Relay Allow",
@@ -70,7 +70,7 @@ Sarah = [
   "Native Tracker TikTok",
   "Referral Allow",
   "AWAvenue No.Unwelcome",
-  "DoH Whitelist"
+  "DoH Blocklist"
 ]
 Tony = [
   "Apple Private Relay Allow",
@@ -80,7 +80,7 @@ Tony = [
   "Native Tracker TikTok",
   "Referral Allow",
   "AWAvenue No.Unwelcome",
-  "DoH Whitelist"
+  "DoH Blocklist"
 ]
 Will = [
   "Apple Private Relay Allow",
@@ -90,5 +90,5 @@ Will = [
   "Native Tracker TikTok",
   "Referral Allow",
   "AWAvenue No.Unwelcome",
-  "DoH Whitelist"
+  "DoH Blocklist"
 ]
