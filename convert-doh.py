@@ -11,6 +11,13 @@ The output is a HaGeZi JSON folder with action do=0 (block).
 import json
 import sys
 
+# Domains to exclude (Apple Private Relay)
+EXCLUDE = {
+    "mask.icloud.com",
+    "mask-h2.icloud.com",
+    "mask-canary.icloud.com",
+}
+
 
 def main():
     if len(sys.argv) != 3:
@@ -26,6 +33,8 @@ def main():
         for line in f:
             line = line.strip()
             if not line or line.startswith('#') or line.startswith('!'):
+                continue
+            if line in EXCLUDE:
                 continue
             if line not in seen:
                 seen.add(line)
