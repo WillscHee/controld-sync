@@ -42,7 +42,7 @@ names = ["Charles", "Sarah", "Tony", "Will"]
 "Native Tracker TikTok"     = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/native-tracker-tiktok-folder.json"
 "Referral Allow"            = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/referral-allow-folder.json"
 "AWAvenue No.Unwelcome"     = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/awavenue-no-unwelcome.json"
-"DoH Blocklist"             = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/doh-whitelist.json"
+"DoH Blocklist"             = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/doh-blocklist.json"
 
 # =============================================================================
 # PROFILE → FOLDER MAPPINGS
