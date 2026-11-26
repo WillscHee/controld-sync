@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Convert DoH whitelist (plain domains) to ControlD/HaGeZi JSON folder format.
+Convert DoH blocklist (plain domains) to ControlD/HaGeZi JSON folder format.
 
 Usage:
     python3 convert-doh.py <input.txt> <output.json>
@@ -34,7 +34,7 @@ def main():
     # Convert to HaGeZi JSON folder format
     hagezi_json = {
         "group": {
-            "group": "DoH Whitelist",
+            "group": "DoH Blocklist",
             "action": {
                 "do": 0,
                 "status": 1
