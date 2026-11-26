@@ -25,7 +25,7 @@ dry_run = false
 
 [profiles]
 # Exact names of your ControlD profiles (case-sensitive).
-names = ["Tesla", "Kids", "Friends", "Adults"]
+names = ["Charles", "Sarah", "Tony", "Will"]
 
 # =============================================================================
 # FOLDER DEFINITIONS
@@ -35,11 +35,13 @@ names = ["Tesla", "Kids", "Friends", "Adults"]
 # =============================================================================
 
 [folders]
-"Badware Hoster"         = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/controld/badware-hoster-folder.json"
-"Most Abused TLDs"       = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/controld/spam-tlds-combined-folder.json"
-"No Safesearch Support"  = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/controld/nosafesearch-folder.json"
-"Referral Allow" = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/controld/referral-allow-folder.json"
-"META Tracker Allow"     = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/controld/meta-tracker-allow-folder.json"
+"Apple Private Relay Allow" = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/apple-private-relay-allow-folder.json"
+"Native Tracker Amazon"     = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/native-tracker-amazon-folder.json"
+"Native Tracker Apple"      = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/native-tracker-apple-folder.json"
+"Native Tracker Microsoft"  = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/native-tracker-microsoft-folder.json"
+"Native Tracker TikTok"     = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/native-tracker-tiktok-folder.json"
+"Referral Allow"            = "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/controld/referral-allow-folder.json"
+"AWAvenue No.Unwelcome"     = "https://raw.githubusercontent.com/WillscHee/controld-hagezi-sync/main/lists/awavenue-no-unwelcome.json"
 
 # =============================================================================
 # PROFILE → FOLDER MAPPINGS
@@ -49,22 +51,39 @@ names = ["Tesla", "Kids", "Friends", "Adults"]
 # =============================================================================
 
 [profile_folders]
-Tesla   = ["Badware Hoster", "Most Abused TLDs"]
-Kids    = [
-  "Badware Hoster",
-  "Most Abused TLDs",
-  "No Safesearch Support",
-  "Referral Allow"
-]
-Friends = [
-  "Badware Hoster",
-  "Most Abused TLDs",
+Charles = [
+  "Apple Private Relay Allow",
+  "Native Tracker Amazon",
+  "Native Tracker Apple",
+  "Native Tracker Microsoft",
+  "Native Tracker TikTok",
   "Referral Allow",
-  "META Tracker Allow"
+  "AWAvenue No.Unwelcome"
 ]
-Adults  = [
-  "Badware Hoster",
-  "Most Abused TLDs",
+Sarah = [
+  "Apple Private Relay Allow",
+  "Native Tracker Amazon",
+  "Native Tracker Apple",
+  "Native Tracker Microsoft",
+  "Native Tracker TikTok",
   "Referral Allow",
-  "META Tracker Allow"
+  "AWAvenue No.Unwelcome"
+]
+Tony = [
+  "Apple Private Relay Allow",
+  "Native Tracker Amazon",
+  "Native Tracker Apple",
+  "Native Tracker Microsoft",
+  "Native Tracker TikTok",
+  "Referral Allow",
+  "AWAvenue No.Unwelcome"
+]
+Will = [
+  "Apple Private Relay Allow",
+  "Native Tracker Amazon",
+  "Native Tracker Apple",
+  "Native Tracker Microsoft",
+  "Native Tracker TikTok",
+  "Referral Allow",
+  "AWAvenue No.Unwelcome"
 ]
