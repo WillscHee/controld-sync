@@ -11,11 +11,16 @@ The output is a HaGeZi JSON folder with action do=0 (block).
 import json
 import sys
 
-# Domains to exclude (Apple Private Relay)
+# Domains to exclude
 EXCLUDE = {
+    # Apple Private Relay
     "mask.icloud.com",
     "mask-h2.icloud.com",
     "mask-canary.icloud.com",
+    # ControlD (can't block own service)
+    "dns.controld.com",
+    "doh.controld.com",
+    "freedns.controld.com",
 }
 
 

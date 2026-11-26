@@ -6966,13 +6966,6 @@
       }
     },
     {
-      "PK": "dns.controld.com",
-      "action": {
-        "do": 0,
-        "status": 1
-      }
-    },
-    {
       "PK": "dns.cooluc.com",
       "action": {
         "do": 0,
@@ -13749,13 +13742,6 @@
       }
     },
     {
-      "PK": "doh.controld.com",
-      "action": {
-        "do": 0,
-        "status": 1
-      }
-    },
-    {
       "PK": "doh.cornes.me",
       "action": {
         "do": 0,
@@ -15647,13 +15633,6 @@
     },
     {
       "PK": "free.shecan.ir",
-      "action": {
-        "do": 0,
-        "status": 1
-      }
-    },
-    {
-      "PK": "freedns.controld.com",
       "action": {
         "do": 0,
         "status": 1
