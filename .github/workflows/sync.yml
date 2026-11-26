@@ -58,9 +58,36 @@ jobs:
           else
             echo "AWAvenue list unchanged"
           fi
+    update-doh:
+      runs-on: ubuntu-latest
+      timeout-minutes: 10
+      steps:
+        - uses: actions/checkout@v7
 
+        - name: Download latest DoH whitelist
+          run: |
+            curl -sL "https://raw.githubusercontent.com/WillscHee/proxy-rules/main/rules/DoH.txt" -o /tmp/doh-raw.txt
+            echo "Downloaded $(wc -l < /tmp/doh-raw.txt) lines"
+
+        - name: Convert to ControlD JSON format
+          run: |
+           python3 convert-doh.py /tmp/doh-raw.txt /tmp/doh-converted.json
+
+        - name: Commit updated list if changed
+          run: |
+            if ! cmp -s /tmp/doh-converted.json lists/doh-whitelist.json; then
+              cp /tmp/doh-converted.json lists/doh-whitelist.json
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add lists/doh-whitelist.json
+              git commit -m "chore: update DoH whitelist"
+              git push
+              echo "DoH list updated"
+            else
+              echo "DoH list unchanged"
+            fi
   check:
-    needs: update-awavenue
+    needs: [update-awavenue, update-doh]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
