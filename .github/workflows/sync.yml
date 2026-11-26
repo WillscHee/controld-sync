@@ -52,9 +52,13 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add lists/awavenue-no-unwelcome.json
-            git commit -m "chore: update AWAvenue No.Unwelcome list"
-            git push
-            echo "AWAvenue list updated"
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: update AWAvenue No.Unwelcome list"
+              git push
+              echo "AWAvenue list updated"
+            else
+              echo "AWAvenue list unchanged (no actual diff)"
+            fi
           else
             echo "AWAvenue list unchanged"
           fi
@@ -76,17 +80,22 @@ jobs:
 
       - name: Commit updated list if changed
         run: |
-          if ! cmp -s /tmp/doh-converted.json lists/doh-blockelist.json; then
+          if ! cmp -s /tmp/doh-converted.json lists/doh-blocklist.json; then
             cp /tmp/doh-converted.json lists/doh-blocklist.json
             git config user.name "github-actions[bot]"
-             git config user.email "github-actions[bot]@users.noreply.github.com"
-             git add lists/doh-blocklist.json
-             git commit -m "chore: update DoH blocklist"
-             git push
-            echo "DoH list updated"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add lists/doh-blocklist.json
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: update DoH blocklist"
+              git push
+              echo "DoH list updated"
+            else
+              echo "DoH list unchanged (no actual diff)"
+            fi
           else
-             echo "DoH list unchanged"
+            echo "DoH list unchanged"
           fi
+
   check:
     needs: [update-awavenue, update-doh]
     runs-on: ubuntu-latest
