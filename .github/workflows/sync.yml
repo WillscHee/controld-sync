@@ -71,7 +71,7 @@ jobs:
 
       - name: Download latest DoH blocklist
         run: |
-          curl -sL "https://raw.githubusercontent.com/WillscHee/proxy-rules/main/rules/DoH.txt" -o /tmp/doh-raw.txt
+          curl -sL "https://raw.githubusercontent.com/WillscHee/proxy-rules/main/txt/DoH.txt" -o /tmp/doh-raw.txt
           echo "Downloaded $(wc -l < /tmp/doh-raw.txt) lines"
 
       - name: Convert to ControlD JSON format
